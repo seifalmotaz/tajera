@@ -1,0 +1,334 @@
+{
+  "seo": {
+    "home": {
+      "title": "Tajera Software – Website & App Development",
+      "description": "Tajera Software – We provide website and application development services with the highest quality and fastest delivery. We design custom software solutions that help your company grow and achieve its goals at the best cost. Discover our web services, mobile applications, UI/UX, and technical support.",
+      "keywords": "Tajera, تاجيرا, website development, تطوير المواقع, app development, تطوير التطبيقات, UI/UX, technical support, الدعم الفني, software solutions, web development, mobile apps"
+    },
+    "blogs": {
+      "title": "Tajera Blog – Latest Articles & Insights",
+      "description": "Read the latest articles and insights about web development, mobile apps, UI/UX design, and software solutions from Tajera."
+    }
+  },
+  "HomePage": {
+    "title": "Home Page",
+    "hero": [
+      "Tajera",
+      "For Programming Services",
+      "A leading company in building electronic applications, e-commerce stores, and software systems",
+      "Our Portfolio ",
+      "Luster | Marketing Agency ",
+      " Request a Quote"
+    ],
+    "services": [
+      "Services",
+      "We offer services for sale, such as website and store development, and systems detection and freezing."
+    ],
+    "project": {
+      "title": "Our Work",
+      "line1": "We execute",
+      "line2": "Outstanding Projects",
+      "line3": "That meet our clients’ expectations...",
+      "desc1": "At Tajera, we take pride in our achievements in software solutions and website development. We have delivered services to a wide range of clients in",
+      "desc2": "Egypt and the Arab world, helping them achieve tangible growth in their digital business.",
+      "categories": {
+        "all": "All",
+        "informational": "Informational Websites",
+        "ecommerce": "E-commerce Stores",
+        "app": "Mobile App (IOS & Android)"
+      },
+      "projectstilte": {
+        "1": "Laster",
+        "2": "NR clinics",
+        "3": "Uniwrap",
+        "4": "5 degrees ",
+        "5": "Ruya",
+        "6": "SITC",
+        "7": "Project 7",
+        "8": "Project 8",
+        "9": "Project 9",
+        "10": "Project 10",
+        "11": "Project 11",
+        "12": "Project 12",
+        "13": "Project 13",
+        "14": "Project 14",
+        "15": "Project 15",
+        "16": "Project 16",
+        "17": "Camion",
+        "18": "Aird Almaearid",
+        "19": "Abgd Online",
+        "20": "sayf",
+        "21": "Shiyil",
+        "22": "Project 22",
+        "23": "Project 23",
+        "24": "Project 24",
+        "25": "Project 25",
+        "26": "Project  26",
+        "27": "Project 27",
+        "28": "MAPC",
+        "29": "Sheikh"
+      }
+    },
+
+    "projects": {
+      "title": "Our Work",
+      "description": "Because we are the best in the field, just try our performance showcase to see amazing results…",
+      "categories": {
+        "all": "All",
+        "informational": "Informational Websites",
+        "ecommerce": "E-commerce Stores"
+      },
+      "countries": {
+        "all": "All",
+        "eg": "Egypt",
+        "sa": "Saudi Arabia",
+        "ae": "UAE"
+      }
+    },
+    "client": [
+      "Our Clients",
+      "Years of Experience",
+      "Happy Clients",
+      "Completed Projects",
+      "Projects in Progress",
+      "Our Clients...",
+      "Clients We Were Honored to Work With..."
+    ],
+    "join": [
+      "Join",
+      "Our Clients",
+      "At Tajera, we’re more than just a service provider — we’re your digital partner helping you achieve your goals and grow your business through innovative solutions and modern technologies.",
+      "<< Request a Quote",
+      "<< Our Services",
+      "Add your platform to",
+      "Our Portfolio"
+    ],
+    "review": {
+      "rw": "Client Testimonials",
+      "title": "What Our Clients Say About Us...",
+      "sub": "We believe in a win-win approach. Our clients are our top priority, and we believe their success is the foundation of our own success.",
+      "testimonials": [
+        {
+          "name": "Sameh Zidan",
+          "email": "sameh-zidan-academy@",
+          "message": "They helped me develop my website and improve its SEO, which increased the number of potential customers. I highly recommend them to anyone looking for a comprehensive programming company."
+        },
+        {
+          "name": "Hassan Ali",
+          "email": "arkan-altahrir@",
+          "message": "Working with the company was amazing! They helped me improve my e-commerce store and increase sales through effective marketing strategies. The team is professional and always cooperative."
+        },
+        {
+          "name": "Adam Barakat",
+          "email": "sparkile-paints@",
+          "message": "I needed innovative software solutions for my project, and the team provided a complete plan that increased customer engagement with my brand. A great experience and trustworthy service!"
+        },
+        {
+          "name": "Mahmoud Sadeq",
+          "email": "atlas-facades@",
+          "message": "I’ve dealt with many software companies, but this one was the best in terms of quality and commitment to deadlines. We achieved excellent results."
+        }
+      ]
+    },
+    "why": [
+      "Why Choose Us?",
+      "Tajera for Android and iOS Application Development",
+      "An Egyptian company licensed by the Ministry of Communications, specialized in programming and developing mobile applications.",
+      "Over 10 years of experience in designing and developing Smartphone applications (iPhone and Android) and Website applications.",
+      "Extensive expertise in creating e-commerce applications and electronic payment solutions.",
+      "Strong experience in implementing applications in the Saudi market for more than 10 years.",
+      "Direct integration and connection with accredited electronic payment companies in Saudi Arabia."
+    ],
+    "contact": {
+      "book": "Book Your Consultation...",
+      "title": "How Can We",
+      "title2": "Help You",
+      "subtitle": "At Tajera, we’re more than just a service provider — we’re your digital partner helping you achieve your goals and grow your business through innovative solutions and modern technologies.",
+      "send": "Send",
+      "done": "Your message has been sent successfully! We will contact you soon.",
+      "notdone": "An error occurred while submitting the form. Please try again.",
+      "error": "Unable to connect to the server.",
+      "send2": "Sending...",
+      "fillAllFields": "Please fill in all required fields",
+      "invalidPhone": "Invalid phone number",
+      "captchaWarning": "Please confirm you're not a robot",
+      "valid": "Valid number:",
+      "invalid": "Invalid number",
+      "placeholders": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone number without country code",
+        "service": "Requested Service",
+        "notes": "Notes"
+      },
+      "countries": [
+        { "code": "EG", "name": "Egypt", "dialCode": "+20", "flag": "🇪🇬" },
+        {
+          "code": "SA",
+          "name": "Saudi Arabia",
+          "dialCode": "+966",
+          "flag": "🇸🇦"
+        },
+        { "code": "AE", "name": "UAE", "dialCode": "+971", "flag": "🇦🇪" },
+        { "code": "QA", "name": "Qatar", "dialCode": "+974", "flag": "🇶🇦" },
+        { "code": "KW", "name": "Kuwait", "dialCode": "+965", "flag": "🇰🇼" },
+        { "code": "OM", "name": "Oman", "dialCode": "+968", "flag": "🇴🇲" },
+        { "code": "BH", "name": "Bahrain", "dialCode": "+973", "flag": "🇧🇭" },
+        { "code": "JO", "name": "Jordan", "dialCode": "+962", "flag": "🇯🇴" },
+        { "code": "IQ", "name": "Iraq", "dialCode": "+964", "flag": "🇮🇶" },
+        { "code": "LB", "name": "Lebanon", "dialCode": "+961", "flag": "🇱🇧" },
+        { "code": "SY", "name": "Syria", "dialCode": "+963", "flag": "🇸🇾" },
+        { "code": "YE", "name": "Yemen", "dialCode": "+967", "flag": "🇾🇪" },
+        { "code": "SD", "name": "Sudan", "dialCode": "+249", "flag": "🇸🇩" },
+        { "code": "MA", "name": "Morocco", "dialCode": "+212", "flag": "🇲🇦" },
+        { "code": "DZ", "name": "Algeria", "dialCode": "+213", "flag": "🇩🇿" },
+        { "code": "TN", "name": "Tunisia", "dialCode": "+216", "flag": "🇹🇳" },
+        { "code": "LY", "name": "Libya", "dialCode": "+218", "flag": "🇱🇾" },
+        { "code": "FR", "name": "France", "dialCode": "+33", "flag": "🇫🇷" },
+        {
+          "code": "US",
+          "name": "United States",
+          "dialCode": "+1",
+          "flag": "🇺🇸"
+        },
+        {
+          "code": "GB",
+          "name": "United Kingdom",
+          "dialCode": "+44",
+          "flag": "🇬🇧"
+        },
+        { "code": "DE", "name": "Germany", "dialCode": "+49", "flag": "🇩🇪" },
+        { "code": "TR", "name": "Turkey", "dialCode": "+90", "flag": "🇹🇷" },
+        { "code": "IN", "name": "India", "dialCode": "+91", "flag": "🇮🇳" },
+        { "code": "PK", "name": "Pakistan", "dialCode": "+92", "flag": "🇵🇰" },
+        { "code": "CN", "name": "China", "dialCode": "+86", "flag": "🇨🇳" },
+        { "code": "CA", "name": "Canada", "dialCode": "+1", "flag": "🇨🇦" },
+        { "code": "RU", "name": "Russia", "dialCode": "+7", "flag": "🇷🇺" },
+        { "code": "ES", "name": "Spain", "dialCode": "+34", "flag": "🇪🇸" },
+        { "code": "IT", "name": "Italy", "dialCode": "+39", "flag": "🇮🇹" },
+        { "code": "AU", "name": "Australia", "dialCode": "+61", "flag": "🇦🇺" }
+      ]
+    }
+  },
+  "Contact": {
+    "hero": [
+      "Get in touch with",
+      "Tajera",
+      "At Tajera, we are more than just a service provider — we are always committed to delivering the best software solutions tailored to your needs. Whether you need a professional website, improved search engine visibility, or effective marketing campaign management, our team is ready to help.",
+      "Phone Number",
+      "Email",
+      "Address",
+      "Namaa Building, Sixth District, Nasr City."
+    ]
+  },
+  "About": {
+    "hero": [
+      "About",
+      "Tajera",
+      "Founded in 2022, Tajera is a company specialized in providing integrated software solutions, combining creativity and technology to achieve the best results for its clients. Our team includes a group of experts with experience dating back to 2016 in creative design, website development, SEO, social media management, and paid advertising. We believe that success in the digital age relies on innovative, data-driven strategies, which is why we strive to deliver tailored solutions that precisely and effectively meet each client’s needs.",
+      "Vision",
+      "Tajera",
+      "To be the number one digital partner for businesses and brands by providing integrated software solutions that drive sustainable growth and enhance clients' digital presence, enabling them to achieve their goals efficiently in a rapidly evolving world.",
+      "Mission",
+      "At Tajera, we are committed to empowering brands to succeed in the digital space by delivering advanced software services based on the latest technologies and effective strategies. We aim to turn creative ideas into tangible reality, helping our clients seize digital market opportunities and engage with their target audience in a unique and impactful way.",
+      "Why Choose Us?",
+      "Tajera",
+      "Innovative Software Solutions",
+      "We are dedicated to helping you achieve your digital goals and build a strong market presence. Our team has extensive experience since 2016, allowing us to deliver innovative solutions.",
+      "Annual Projects",
+      "Team Members",
+      "Years of Experience",
+      "Clients Worldwide"
+    ],
+    "Fsq": {
+      "sectionTitle": "FAQs",
+      "sectionSubtitle": "Common Questions",
+      "sub": "We offer a comprehensive set of services to help you achieve your digital goals:",
+      "col1": "Software Solutions",
+      "col2": "Marketing Solutions",
+      "col3": "Digital Consulting",
+      "more": "More →",
+      "intro": "From our clients",
+      "questions": [
+        {
+          "q": "What services does Tajera offer?",
+          "a": "complex"
+        },
+        {
+          "q": "How long does it take to build a new website?",
+          "a": "The time varies depending on the size and requirements of the website, but usually ranges between 2 to 6 weeks."
+        },
+        {
+          "q": "Can I request a single service without a full package?",
+          "a": "Yes, we provide individual services without requiring subscription to full packages."
+        },
+        {
+          "q": "What types of websites can be built?",
+          "a": "There are several types, such as company profile websites, e-commerce stores, blogs, news websites, forums, and booking/service sites."
+        }
+      ]
+    }
+  },
+  "Bolgs": { "more": "More" },
+  "header": {
+    "home": "Home",
+    "aboutUS": "About Us",
+    "services": "Services",
+    "blogs": "Blogs",
+    "client": "Client",
+    "contact": "Contact Us",
+    "finalwork": "Final Work",
+    "connectWithUs": "Request a quote",
+    "luster": "Marketing services",
+    "serviceOptions": [
+      "Website Development",
+      "E-commerce Development",
+      "Mobile App Development",
+      "Web Hosting",
+      "Web Programming",
+      "CRM Systems",
+      "ERP Systems",
+      "Odoo Systems",
+      "Technical Support"
+    ]
+  },
+  "Footer": {
+    "company": "Tajera",
+    "phone": "01000447398",
+    "email": "info@tajera.net",
+    "branchesTitle": "Our Branches",
+    "branches": [
+      "Namaa Building, Sixth District, Nasr City"
+
+    ],
+    "servicesTitle": "Our Services",
+    "services": [
+      "Website design and development",
+      "Mobile app design and development",
+      "E-commerce development",
+      "Web programming",
+      "Marketing services"
+    ],
+    "newsletterTitle": "Newsletter",
+    "newsletterText": "Subscribe to our newsletter to get the latest updates...",
+    "emailPlaceholder": "Email",
+    "subscribe": "Subscribe",
+    "copyright": "Copyright © 2025 Made with love, Tajera. All rights reserved.",
+    "whatsapp": "Contact us",
+    "call": "Contact us",
+    "subscribing": "Subscribing...",
+    "subscribed": "Successfully subscribed",
+    "subscribeError": "Subscription failed, please try again",
+    "invalidEmail": "Invalid email address",
+    "error": "A connection error occurred"
+  },
+  "Services": {
+    "title": "Website Creation and Development Service Components...",
+    "sub": "We provide you with a website",
+    "services": "along with integrated services to assist you",
+    "blogs": "in achieving your digital goals",
+    "client": "Work Stages...",
+    "contact": "Here are the stages of creating and developing a complete website...",
+    "finalwork": "We offer exceptional services such as website, store, app, and software system development"
+  }
+}

@@ -16,9 +16,18 @@ const almarai = Almarai({
   weight: ["300", "400", "700"],
 });
 export const metadata = {
+  applicationName: "Tajera",
+  appleWebApp: {
+    capable: true,
+    title: "Tajera",
+    statusBarStyle: "default",
+  },
+  themeColor: "#000000",
   icons: {
     icon: "/assets/logos/logo.png",
+    apple: "/assets/logos/logo.png",
   },
+  manifest: "/manifest.json",
 };
 
 export default async function LocaleLayout({ children, params }) {

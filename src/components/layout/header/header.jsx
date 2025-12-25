@@ -21,6 +21,15 @@ const Header = () => {
   const [options, setOptions] = useState([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const titles = t.raw("serviceOptions");
@@ -36,69 +45,91 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const navLinkClass =
+    "relative group px-1 py-1 text-gray-700 hover:text-[var(--color-logo-blue)] transition-colors duration-300 font-medium";
+  const navUnderlineClass =
+    "absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full";
+
   return (
-    <header className="w-full    bg-cover bg-top bg-no-repeat z-50">
-      <div className="md:max-w-[100%] w-full rounded-sm md:h-[105px] fixed h-[50px] p-4 bg-white z-[99] shadow-[0px_10px_40px_rgba(0,0,0,0.04)] transition-all duration-300 mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Left Side - Mobile Menu Button + Desktop CTA */}
-        <div className="flex items-center gap-3">
-          <Link
+    <header className="w-full z-50">
+      <div
+        className={`w-full fixed top-0 left-0 right-0 z-[99] transition-all duration-500 flex justify-between items-center px-6 md:px-12
+          ${
+            scrolled
+              ? "h-[75px] bg-white/95 backdrop-blur-lg shadow-lg border-b border-gray-100"
+              : "h-[105px] bg-white shadow-sm"
+          }`}
+      >
+        {/* Left Side: CTA Button */}
+        <div className="flex items-center gap-4">
+          {/* <Link
             href="/contact"
-            className="hidden cursor-pointer md:block text-white px-4 py-2.5 rounded-sm hover:opacity-90 transition text-xs font[600] shadow-sm" style={{backgroundColor: "var(--color-logo-blue)"}}
+            className="hidden md:flex items-center justify-center px-6 py-2.5 rounded-lg text-white font-bold text-sm transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md"
+            style={{
+              background:
+                "linear-gradient(135deg, var(--color-logo-blue) 0%, var(--color-logo-purple) 100%)",
+              boxShadow: scrolled
+                ? "0 4px 15px rgba(26, 35, 126, 0.2)"
+                : "0 2px 10px rgba(0,0,0,0.1)",
+            }}
           >
             {t("connectWithUs")}
-          </Link>
+          </Link> */}
 
           <button
-            className="md:hidden text-2xl text-gray-700"
+            className="md:hidden text-2xl focus:outline-none"
+            style={{ color: "var(--color-logo-blue)" }}
             onClick={() => setMobileMenuOpen(true)}
           >
             <FaBars />
           </button>
-         
         </div>
 
-        {/* Mobile Logo - Centered */}
+        {/* Mobile Logo */}
         <div className="md:hidden flex items-center justify-center flex-1">
-          <Link href="/" className="flex items-center justify-center">
+          <Link
+            href="/"
+            className="transition-transform duration-300 hover:scale-105"
+          >
             <img
-              src="/assets/logos/logo.png"
+              src="/assets/logos/tajearaLogo.jpeg"
               alt="Logo"
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </Link>
         </div>
 
         <GlobalLanguage className="md:hidden" />
 
-        {/* First Group of Nav Links */}
-        <nav className="hidden md:flex gap-8 items-center text-[15px] font-medium text-gray-800">
-          <Link href="/" className="hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
+        {/* Desktop Navigation Group 1 */}
+        <nav className="hidden lg:flex gap-8 items-center text-[15px]">
+          <Link href="/" className={navLinkClass}>
             {t("home")}
+            <span
+              className={navUnderlineClass}
+              style={{ backgroundColor: "var(--color-logo-purple)" }}
+            ></span>
           </Link>
 
           {/* Dropdown */}
-          <li className="relative list-none group">
-            <div className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
-              <Link href="/services" className="text-[15px] font-[500]">
+          <div className="relative group list-none">
+            <div className="flex items-center gap-1.5 cursor-pointer text-gray-700 hover:text-[var(--color-logo-blue)] transition-colors duration-300 font-medium">
+              <Link href="/services" className="text-[15px]">
                 {t("services")}
               </Link>
-              <FontAwesomeIcon icon={faChevronDown} className="h-3 w-3" />
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="h-2.5 w-2.5 transition-transform duration-300 group-hover:rotate-180"
+              />
             </div>
 
-            <ul
-              className={`
-                absolute top-full right-0 mt-2 w-64 bg-white shadow-xl rounded-xl z-50 text-start py-2 overflow-hidden
-                opacity-0 group-hover:opacity-100
-                invisible group-hover:visible
-                transition-all duration-300
-              `}
-            >
+            <ul className="absolute top-[120%] right-[-20px] w-64 bg-white shadow-2xl rounded-2xl z-50 py-3 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-full transition-all duration-300 border border-gray-100">
               {isLoading ? (
-                <div className="p-4 space-y-2">
+                <div className="p-4 space-y-3">
                   {[...Array(3)].map((_, i) => (
-                    <li
+                    <div
                       key={i}
-                      className="animate-pulse bg-gray-300 w-52 h-6 rounded-md mx-auto"
+                      className="animate-pulse bg-gray-50 h-5 rounded-md mx-4"
                     />
                   ))}
                 </div>
@@ -109,7 +140,7 @@ const Header = () => {
                       href={`/services/${option.id}-${encodeURIComponent(
                         option.title.replace(/\s+/g, "-")
                       )}`}
-                      className="block px-4 py-2 text-sm hover:bg-gray-100 hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}
+                      className="block px-6 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[var(--color-logo-blue)] transition-all duration-200"
                     >
                       {option.title}
                     </Link>
@@ -117,192 +148,228 @@ const Header = () => {
                 ))
               )}
             </ul>
-          </li>
-
-          <Link href="/about" className="hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
-            {t("aboutUS")}
-          </Link>
-        </nav>
-
-        {/* Logo - Centered */}
-        <div className="hidden md:flex md:w-40 relative items-center justify-center">
-          <Link href="/" className="absolute w-full h-full"></Link>
-          <img
-            src="/assets/logos/logo.png"
-            alt="Logo"
-            className="w-full h-20 object-contain"
-          />
-        </div>
-
-        {/* Second Group of Nav Links */}
-        <nav className="hidden md:flex gap-8 items-center text-[15px] font-medium text-gray-800">
-          <Link href="/client" className="hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
-            {t("client")}
-          </Link>
-          {/* <Link href="/projects" className="hover:text-[#8700FF] transition">
-            {t("finalwork")}
-          </Link> */}
-          <Link href="/blogs" className="hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
-            {t("blogs")}
-          </Link>
-          <Link href="/contact" className="hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}>
-            {t("contact")}
-          </Link>
-        </nav>
-
-        {/* Social Links + Language - Right Side */}
-        <div className="hidden md:flex items-center gap-4">
-          <div className="flex text-center gap-3">
-            <a href="https://www.facebook.com/share/174axbzL5R/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.instagram.com/tajera646?utm_source=qr&igsh=eW13OGh4OXVkcGky" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faSquareInstagram} />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/tajera"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a
-              href="https://www.tiktok.com/@tajera025?_r=1&_t=ZS-91RjJccaPrR"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faTiktok} />
-            </a>
-            <a
-              href="https://youtube.com/@tajera-x5r?si=qMPZLzibI3YDfPJN"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faYoutube} />
-            </a>
           </div>
-          <GlobalLanguage />
+
+          <Link href="/about" className={navLinkClass}>
+            {t("aboutUS")}
+            <span
+              className={navUnderlineClass}
+              style={{ backgroundColor: "var(--color-logo-purple)" }}
+            ></span>
+          </Link>
+        </nav>
+
+        {/* Central Logo */}
+        <div className="hidden md:flex items-center justify-center mx-4 flex-shrink-0">
+          <Link
+            href="/"
+            className="relative transition-all duration-500 hover:scale-110"
+          >
+            <img
+              src="/assets/logos/tajearaLogo.jpeg"
+              alt="Logo"
+              className={`object-contain transition-all duration-500 ${
+                scrolled ? "h-14" : "h-20"
+              }`}
+            />
+          </Link>
         </div>
 
+        {/* Desktop Navigation Group 2 */}
+        <nav className="hidden lg:flex gap-8 items-center text-[15px]">
+          <Link href="/client" className={navLinkClass}>
+            {t("client")}
+            <span
+              className={navUnderlineClass}
+              style={{ backgroundColor: "var(--color-logo-purple)" }}
+            ></span>
+          </Link>
+          <Link href="/blogs" className={navLinkClass}>
+            {t("blogs")}
+            <span
+              className={navUnderlineClass}
+              style={{ backgroundColor: "var(--color-logo-purple)" }}
+            ></span>
+          </Link>
+          <Link href="/contact" className={navLinkClass}>
+            {t("contact")}
+            <span
+              className={navUnderlineClass}
+              style={{ backgroundColor: "var(--color-logo-purple)" }}
+            ></span>
+          </Link>
+        </nav>
+
+        {/* Right Side Socials & Language */}
+        <div className="hidden md:flex items-center gap-6">
+          {/* <div className="flex items-center gap-4 text-gray-400">
+            {[
+              {
+                icon: faFacebook,
+                url: "https://www.facebook.com/share/174axbzL5R/",
+              },
+              {
+                icon: faSquareInstagram,
+                url: "https://www.instagram.com/tajera646?utm_source=qr&igsh=eW13OGh4OXVkcGky",
+              },
+              {
+                icon: faLinkedin,
+                url: "https://www.linkedin.com/company/tajera",
+              },
+              {
+                icon: faTiktok,
+                url: "https://www.tiktok.com/@tajera025?_r=1&_t=ZS-91RjJccaPrR",
+              },
+              {
+                icon: faYoutube,
+                url: "https://youtube.com/@tajera-x5r?si=qMPZLzibI3YDfPJN",
+              },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--color-logo-blue)] transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <FontAwesomeIcon icon={social.icon} className="text-lg" />
+              </a>
+            ))}
+          </div> */}
+          {/* <div className="h-6 w-[1px] bg-gray-200 mx-1"></div> */}
+          {/* <GlobalLanguage /> */}
+        </div>
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/30 z-40 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/20 backdrop-blur-[2px] z-40 transition-opacity duration-500 ${
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         onClick={() => setMobileMenuOpen(false)}
       />
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Sidebar */}
       <div
-        className={`fixed top-0 pt-20 right-0 w-72 h-full bg-white shadow-xl z-50 transform transition-transform duration-300 p-5 text-right flex flex-col ${
+        className={`fixed top-0 right-0 w-[80%] max-w-[320px] h-full bg-white shadow-2xl z-50 transform transition-transform duration-500 ease-out p-8 flex flex-col ${
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex relative justify-end items-center mb-6">
-          <FaTimes
-            className="text-xl z-20 cursor-pointer"
-            onClick={() => setMobileMenuOpen(false)}
+        <div className="flex justify-between items-center mb-10">
+          <img
+            src="/assets/logos/tajearaLogo.jpeg"
+            alt="Logo"
+            className="h-10 w-auto"
           />
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="p-2 rounded-full bg-gray-50 text-gray-500 hover:bg-gray-100 transition-colors"
+          >
+            <FaTimes className="text-xl" />
+          </button>
         </div>
 
-        <ul className="space-y-4 text-start text-gray-800 font-medium">
-          <li>
-            <Link href="/">{t("home")}</Link>
-          </li>
-
-          <li>
-            <div
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className="flex text-start items-center justify-between cursor-pointer"
-            >
+        <nav className="flex-1 overflow-y-auto">
+          <ul className="space-y-6 text-gray-800 font-medium">
+            <li>
               <Link
-                href="/services"
-                className="text-[15px] text-start font-[500]"
+                href="/"
+                className="block py-2 text-lg hover:text-[var(--color-logo-blue)]"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                {t("services")}
+                {t("home")}
               </Link>
-              <FaChevronDown
-                className={`transition-transform ${
-                  mobileServicesOpen ? "rotate-180" : ""
+            </li>
+
+            <li>
+              <div
+                onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                className="flex items-center justify-between py-2 text-lg cursor-pointer hover:text-[var(--color-logo-blue)]"
+              >
+                <span
+                  className="flex-1"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  <Link href="/services">{t("services")}</Link>
+                </span>
+                <FaChevronDown
+                  className={`transition-transform duration-300 ${
+                    mobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </div>
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  mobileServicesOpen
+                    ? "max-h-96 mt-2 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
-              />
-            </div>
-            {mobileServicesOpen && (
-              <ul className="mt-2 space-y-2 text-start pr-3 text-sm">
-                {options.map((option) => (
-                  <li key={option.id}>
-                    <Link
-                      href={`/services/${option.id}-${encodeURIComponent(
-                        option.title.replace(/\s+/g, "-")
-                      )}`}
-                      className="block text-start hover:opacity-80 transition" style={{color: "var(--color-logo-magenta)"}}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {option.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+              >
+                <ul className="space-y-3 pr-4 border-r-2 border-gray-100">
+                  {options.map((option) => (
+                    <li key={option.id}>
+                      <Link
+                        href={`/services/${option.id}-${encodeURIComponent(
+                          option.title.replace(/\s+/g, "-")
+                        )}`}
+                        className="block py-1.5 text-gray-600 hover:text-[var(--color-logo-blue)] transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {option.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </li>
 
-          <li>
-            <Link href="/about">{t("aboutUS")}</Link>
-          </li>
-          <li>
-            <Link href="/client">{t("client")}</Link>
-          </li>
-          <li>
-            <Link href="/projects">{t("finalwork")}</Link>
-          </li>
-          <li>
-            <Link href="/blogs">{t("blogs")}</Link>
-          </li>
-          <li>
-            <Link href="/contact">{t("contact")}</Link>
-          </li>
-        </ul>
+            {["aboutUS", "client", "blogs", "contact"].map((key) => (
+              <li key={key}>
+                <Link
+                  href={`/${key === "aboutUS" ? "about" : key}`}
+                  className="block py-2 text-lg hover:text-[var(--color-logo-blue)]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {t(key)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        <div className="flex flex-col w-full m-auto justify-center text-center gap-3">
-          <div className="flex w-full flex-col justify-center items-center gap-3">
-            <Link
-              href="/contact"
-              className="cursor-pointer md:text-[16px] text-[12px] font-bold md:block text-white md:px-[45px] px-[30px] py-[8px] rounded-[3px] transition font[600] shadow-sm hover:opacity-90" style={{backgroundColor: "var(--color-logo-blue)"}}
-            >
-              {t("connectWithUs")}
-            </Link>
-       
-          </div>
-          <div className="flex text-center justify-center gap-6 text-lg">
-            <a href="https://www.facebook.com/share/174axbzL5R/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.instagram.com/tajera646?utm_source=qr&igsh=eW13OGh4OXVkcGky" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faSquareInstagram} />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/tajera"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a
-              href="https://www.tiktok.com/@tajera025?_r=1&_t=ZS-91RjJccaPrR"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faTiktok} />
-            </a>
-            <a
-              href="https://youtube.com/@tajera-x5r?si=qMPZLzibI3YDfPJN"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faYoutube} />
-            </a>
+        <div className="mt-10 pt-8 border-t border-gray-100 space-y-6 text-center">
+          <Link
+            href="/contact"
+            className="flex items-center justify-center w-full py-4 rounded-xl text-white font-bold shadow-lg transition-transform active:scale-95"
+            style={{
+              background:
+                "linear-gradient(135deg, var(--color-logo-blue) 0%, var(--color-logo-purple) 100%)",
+            }}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            {t("connectWithUs")}
+          </Link>
+
+          <div className="flex justify-center gap-6">
+            {[
+              faFacebook,
+              faSquareInstagram,
+              faLinkedin,
+              faTiktok,
+              faYoutube,
+            ].map((icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="text-gray-400 hover:text-[var(--color-logo-blue)] transition-colors"
+              >
+                <FontAwesomeIcon icon={icon} size="lg" />
+              </a>
+            ))}
           </div>
         </div>
       </div>

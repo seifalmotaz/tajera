@@ -22,7 +22,7 @@ const clientLogos = [
 
 export default function ClientsSection() {
   const t = useTranslations("HomePage");
-  
+
   // Custom styles for pagination
   const paginationStyles = `
     .swiper-pagination-custom .swiper-pagination-bullet {
@@ -34,7 +34,7 @@ export default function ClientsSection() {
       transition: all 0.3s ease;
     }
     .swiper-pagination-custom .swiper-pagination-bullet-active {
-      background: #30398B;
+      background: var(--color-logo-purple);
       transform: scale(1.2);
     }
   `;
@@ -46,10 +46,10 @@ export default function ClientsSection() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-[#f7f9fc] to-white md:py-16 py-8 px-4 text-center">
+    <section className="bg-gradient-to-br from-[#fbf9fd] to-white md:py-16 py-8 px-4 text-center">
       <style dangerouslySetInnerHTML={{ __html: paginationStyles }} />
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-[#4C67D9]">
+        <h2 className="text-3xl font-bold mb-10 text-[var(--color-logo-blue)]">
           {t("client.0")}
         </h2>
 
@@ -72,19 +72,19 @@ export default function ClientsSection() {
               pauseOnMouseEnter: true,
             }}
             navigation={{
-              nextEl: '.swiper-button-next-custom',
-              prevEl: '.swiper-button-prev-custom',
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
             }}
             pagination={{
               clickable: true,
-              el: '.swiper-pagination-custom',
+              el: ".swiper-pagination-custom",
             }}
             speed={800}
             effect="slide"
           >
             {clientLogos.map((src, index) => (
               <SwiperSlide key={index}>
-                <div className="md:w-44 md:h-44 w-26 h-26 mb-4 mx-auto rounded-full p-2 relative overflow-hidden bg-white shadow-md border-2 border-gray-100 hover:shadow-lg transition-shadow duration-300">
+                <div className="md:w-44 md:h-44 w-26 h-26 mb-4 mx-auto rounded-full p-2 relative overflow-hidden bg-white shadow-md border-2 border-gray-100 hover:shadow-lg hover:border-[var(--color-logo-blue)]/30 transition-all duration-300">
                   <Image
                     src={src}
                     alt={`Client ${index}`}
@@ -96,19 +96,39 @@ export default function ClientsSection() {
               </SwiperSlide>
             ))}
           </Swiper>
-          
+
           {/* Custom Navigation Buttons */}
-          <div className="swiper-button-prev-custom absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[#30398B] hover:text-white transition-all duration-300 cursor-pointer">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          <div className="swiper-button-prev-custom absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[var(--color-logo-purple)] hover:text-white transition-all duration-300 cursor-pointer">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </div>
-          <div className="swiper-button-next-custom absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[#30398B] hover:text-white transition-all duration-300 cursor-pointer">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          <div className="swiper-button-next-custom absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-3 shadow-lg hover:bg-[var(--color-logo-purple)] hover:text-white transition-all duration-300 cursor-pointer">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </div>
-          
+
           {/* Custom Pagination */}
           <div className="swiper-pagination-custom flex justify-center mt-6 space-x-2"></div>
         </div>
@@ -119,8 +139,11 @@ export default function ClientsSection() {
             const rawNumber = parseInt(stat.number.replace(/[^\d]/g, ""));
 
             return (
-              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <p className="text-[#4C67D9] md:text-[69px] text-[30px] font-[700]">
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <p className="text-[var(--color-logo-blue)] md:text-[69px] text-[30px] font-[700]">
                   <CountUp end={rawNumber} duration={2} separator="," />
                   <span>+</span>
                 </p>

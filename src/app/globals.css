@@ -5,15 +5,20 @@
   --font-primary: var(--font-geist-sans);
   --font-secondary: var(--font-almarai);
   --font-mono: var(--font-geist-mono);
-  
-  /* TJ Logo Color Palette */
-  --color-logo-blue: #1a237e;
-  --color-logo-purple: #6a1b9a;
-  --color-logo-magenta: #1a237e;
-  
+
+  /* TJ Logo Color Palette - updated to Gray Lavender */
+  --color-logo-blue: #9061ad;
+  --color-logo-purple: #7a4a96;
+  --color-logo-magenta: #9061ad;
+
   /* Gradient variations */
-  --gradient-logo: linear-gradient(180deg, var(--color-logo-blue) 0%, var(--color-logo-purple) 50%, var(--color-logo-magenta) 100%);
-  --gradient-logo-horizontal: linear-gradient(90deg, var(--color-logo-blue) 0%, var(--color-logo-purple) 50%, var(--color-logo-magenta) 100%);
+  --gradient-logo: linear-gradient(
+    180deg,
+    #9061ad 0%,
+    #7a4a96 50%,
+    #6a3a86 100%
+  );
+  --gradient-logo-horizontal: linear-gradient(90deg, #9061ad 0%, #7a4a96 100%);
 }
 
 body {

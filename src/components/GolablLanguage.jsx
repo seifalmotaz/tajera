@@ -23,7 +23,7 @@ export const GlobalLanguage = ({ className = "" }) => {
   return (
     <button
       onClick={changeLanguage}
-      className={`flex items-center cursor-pointer gap-1 px-3 py-1.5 rounded-full border border-gray-300 hover:bg-gray-100 transition-all text-sm font-medium ${className}`}
+      className={`flex items-center cursor-pointer gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 hover:border-[var(--color-logo-blue)] hover:bg-[var(--color-logo-blue)]/5 transition-all text-sm font-medium text-gray-700 hover:text-[var(--color-logo-blue)] ${className}`}
     >
       {isArabic ? (
         <>

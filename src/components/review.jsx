@@ -34,11 +34,11 @@ export default function TestimonialsPage() {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-[#f7f9fc] to-white md:py-16 py-4 px-4 text-right">
+    <div className="bg-gradient-to-br from-[#fbf9fd] to-white md:py-16 py-4 px-4 text-right">
       <div className="max-w-[1200px] md:flex md:flex-row flex-col  mx-auto">
         <div className="flex flex-col gap-4 items-start md:w-[40%] justify-between mb-10">
           <div className="flex justify-between gap-2 ">
-            <div className="text-[#fff] md:h-[80px] h-[60px] w-[90px] text-center bg-[#4C67D9] rounded-full ">
+            <div className="text-[#fff] md:h-[80px] h-[60px] w-[90px] text-center bg-[var(--color-logo-blue)] rounded-full ">
               <span className="font-bold md:text-[40px] text-[30px]">,,</span>
             </div>
             <div className="text-start">
@@ -71,7 +71,7 @@ export default function TestimonialsPage() {
                 />
                 <div>
                   <p className="font-bold text-start">{testimonial.name}</p>
-                  <p className="text-sm text-[#4C67D9] text-start">
+                  <p className="text-sm text-[var(--color-logo-blue)] text-start">
                     {testimonial.handle}
                   </p>
                 </div>

@@ -10,10 +10,10 @@ export default function hero() {
     <div className=" bg-cover bg-top bg-no-repeat pt-26  md:min-h-[500px]  bg-[url('/assets/images/bg.avif')] m-auto w-[100%] flex flex-col gap-1 justify-center items-center text-center">
       <div className="flex flex-col gap-4  justify-center items-center text-center m-auto px-4 md:px-0">
         <h1 className="flex md:flex-row flex-col gap-2 justify-center items-center text-center m-auto md:text-[60px] text-[24px] font-[700]">
-          <span className="text-[#4C67D9] flex md:gap-2 gap-1">
+          <span className="text-[var(--color-logo-blue)] flex md:gap-2 gap-1">
             {heroTexts[0]}
           </span>
-          <span className="text-[#000] flex md:gap-2 gap-1">
+          <span className="text-gray-900 flex md:gap-2 gap-1">
             {heroTexts[1]}
           </span>
         </h1>
@@ -26,7 +26,7 @@ export default function hero() {
         <div className="flex">
           <Link
             href="/projects"
-            className="cursor-pointer md:text-[16px] text-[12px]  font-bold md:block bg-[#4C67D9] hover:bg-[#30398B] text-white md:px-[45px] px-[20px] py-[6px]  rounded-[3px]  transition  font[600] shadow-sm"
+            className="cursor-pointer md:text-[16px] text-[12px]  font-bold md:block bg-[var(--color-logo-blue)] hover:bg-[var(--color-logo-purple)] text-white md:px-[45px] px-[20px] py-[6px]  rounded-[3px]  transition  font[600] shadow-sm"
           >
             {heroTexts[3]}
           </Link>
@@ -34,12 +34,11 @@ export default function hero() {
         <div className="flex">
           <Link
             href="/contact"
-            className="cursor-pointer md:text-[16px] text-[12px]  font-bold md:block bg-[#4C67D9] hover:bg-[#30398B] text-white md:px-[45px] px-[20px] py-[6px]  rounded-[3px]  transition  font[600] shadow-sm"
+            className="cursor-pointer md:text-[16px] text-[12px]  font-bold md:block bg-[var(--color-logo-blue)] hover:bg-[var(--color-logo-purple)] text-white md:px-[45px] px-[20px] py-[6px]  rounded-[3px]  transition  font[600] shadow-sm"
           >
             {heroTexts[5]}
           </Link>
         </div>
-    
       </div>
     </div>
   );

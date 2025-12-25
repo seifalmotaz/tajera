@@ -12,7 +12,10 @@ export default function WhyUs() {
         <div className="w-full text-start lg:w-1/2">
           <p className="text-sm text-gray-600 mb-2">{t("why.0")}</p>
           <h2 className="text-3xl font-bold leading-snug">
-            <span className="text-[#4C67D9]"> {t("why.1")} </span>
+            <span className="text-[var(--color-logo-blue)]">
+              {" "}
+              {t("why.1")}{" "}
+            </span>
           </h2>
           <ul>
             <li className="mt-4 text-gray-600 text-lg leading-relaxed">

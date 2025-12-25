@@ -10,8 +10,8 @@ export default function Services() {
   const servicesAll = allServices[locale]; // now you access ar[] or en[] depending on locale
   const servicesTexts = t.raw("services");
   return (
-    <div className=" w-full bg-[#eff5fe] mt-16  flex flex-col gap-1 justify-center items-center text-center">
-      <h2 className="text-[#4C67D9] mt-4 md:text-[33px] text-[20px] font-[700]">
+    <div className=" w-full bg-[#fbf9fd] mt-16  flex flex-col gap-1 justify-center items-center text-center">
+      <h2 className="text-[var(--color-logo-blue)] mt-4 md:text-[33px] text-[20px] font-[700]">
         {servicesTexts[0]}
       </h2>
       <p className="md:text-[18px] md:w-full w-[80%]  text-[15px] mb-2  text-[#50595f]">
@@ -22,7 +22,7 @@ export default function Services() {
           {servicesAll.map((item) => (
             <div
               key={item?.id}
-              className="border relative bg-white cursor-pointer border-gray-200 rounded-lg p-5 md:text-start text-center hover:shadow-md transition-all duration-300"
+              className="border relative bg-white cursor-pointer border-gray-200 rounded-lg p-5 md:text-start text-center hover:shadow-md hover:border-[var(--color-logo-blue)]/20 transition-all duration-300"
             >
               <Link
                 className="absolute w-full h-full z-10 "
@@ -47,7 +47,7 @@ export default function Services() {
                 )}
               </div>
 
-              <h3 className="text-blue-700 text-md font-bold mb-2">
+              <h3 className="text-[var(--color-logo-blue)] text-md font-bold mb-2">
                 {item?.title}
               </h3>
               <p className="text-sm font-semibold text-[#50595f] leading-loose line-clamp-3 ">
